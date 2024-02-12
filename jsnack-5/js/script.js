@@ -1,22 +1,38 @@
-let frase = prompt('Inserisci una parola o una serie di numeri!');
+const textDemo = document.querySelector('#text');
 
-const upperCase = [];
+const buttonElement = document.querySelector("#avvia");
 
-function reverse(frase) {    
+setTimeout (function(){
+    textDemo.classList.add('op-1');
+    textDemo.classList.remove('op-0');
+}, 1000)
 
-    let qualcosa = frase.split(" "); 
+buttonElement.addEventListener("click",
+function() {
 
-    for (let i = 0; i < qualcosa.length; i++) {
-        
-        let letter = qualcosa[i].slice(0,1).toUpperCase();
-        
-        let fullWord = letter + qualcosa[i].slice(1);
-        
-        upperCase.push(fullWord);
+    let frase = prompt('Inserisci una frase');
+    
+    const upperCase = [];
+    
+    function reverse(frase) {    
+    
+        let qualcosa = frase.split(" "); 
+    
+        for (let i = 0; i < qualcosa.length; i++) {
+            
+            let letter = qualcosa[i].slice(0,1).toUpperCase();
+            
+            let fullWord = letter + qualcosa[i].slice(1);
+            
+            upperCase.push(fullWord);
+        }
+    
+        return upperCase.join(" "); 
+    
     }
 
-    return upperCase.join(" "); 
+    reverse(frase);
+    
+    document.getElementById('output').innerHTML = upperCase;
 
-}
-
-console.log(reverse(frase));
+})
