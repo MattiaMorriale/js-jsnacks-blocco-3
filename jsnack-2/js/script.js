@@ -5,7 +5,7 @@ const buttonElement = document.querySelector("#avvia");
 setTimeout (function(){
     textDemo.classList.add('op-1');
     textDemo.classList.remove('op-0');
-}, 2000)
+}, 1000)
 
 buttonElement.addEventListener("click",
 function() {
