@@ -1,6 +1,10 @@
 
 
 /* CSS */
+a{
+    text-decoration: none;
+}
+
 .button-11 {
   touch-action: manipulation;
   position: relative;
