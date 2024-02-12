@@ -1,11 +1,24 @@
-let parola = prompt('Inserisci una parola o una serie di numeri!');
+const textDemo = document.querySelector('#text');
 
-function reverse(parola) {
+const buttonElement = document.querySelector("#avvia");
+
+setTimeout (function(){
+    textDemo.classList.add('op-1');
+    textDemo.classList.remove('op-0');
+}, 2000)
+
+buttonElement.addEventListener("click",
+function() {
+
+    let parola = prompt('Inserisci una parola o una serie di numeri!');
+
+    function reverse(parola) {
     
-    parola.split('').reverse().join('');
+        let stampa = parola.split('').reverse().join('');
+    
+        document.getElementById('output').innerHTML = stampa;
+    }
 
-    console.log(parola.split('').reverse().join(''));
-
-}
-
-reverse(parola);
+    reverse(parola);
+    
+})
